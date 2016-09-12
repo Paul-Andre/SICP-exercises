@@ -1,0 +1,13 @@
+(define (average . args)
+	(/ (apply + args) (length args)))
+	
+(define (square x) (* x x))
+
+(define (abs x) ((if (> x 0) + -) 0 x))
+
+(define (sqrt n)
+	(define (sqrt-iter guess n times)
+		(if (> times 0) 
+			(sqrt-iter (average guess (/ n guess)) n (- times 1))
+			guess))
+	(sqrt-iter 1.0 n 10))

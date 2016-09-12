@@ -1,0 +1,2 @@
+(define (f a b c)
+	(cond ((and (>= a b) (>= c b)) (+ (* a a)

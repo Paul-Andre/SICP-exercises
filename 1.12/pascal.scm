@@ -1,0 +1,11 @@
+#lang planet neil/sicp
+(define (pascal a b)
+  (cond ((or (= a 0)
+             (= b 0)
+             (= a b)) 1)
+        ((> a b) (+ (pascal (- a 1) (- b 1))
+                 (pascal (- a 1) b)))
+        (else 0)))
+(pascal 0 0)
+(pascal 2 1)
+(pascal 4 2)
